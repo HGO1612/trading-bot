@@ -763,7 +763,7 @@ def main():
                             min_profit = 0.02 if portfolio_value < 100 else 1
                             if (price - state['entry_price']) * amount > min_profit:
                                 execute_sell(amount, price)
-                                state['sell_pause_until'] = current_time + 1800  # 30-minute cooldown for sells
+                                state['sell_pause_until'] = current_time + 300  # 30-minute cooldown for sells
                                 log("Sell cooldown for 30 minutes")
                                 del state['sell_targets'][i]
                                 break
